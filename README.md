@@ -12,8 +12,6 @@ If at any time you want to recycle the images currently in place, you can just r
 
 > Note: This action makes use of the [enygma/fetch-team-avatars](https://github.com/enygma/fetch-team-avatars) script to fetch the team information and output the table. This makes use of several Composer (PHP) packages to get the job done so check out that repository if you're interested in its dependencies.
 
-This repository also makes use of the [EndBug/add-and-commit@v7](https://github.com/EndBug/add-and-commit) action for committing the `README.md` changes.
-
 ## Setup
 
 In order for this action to work, you'll need to set up a personal access token that has access to write to the target repository. It can be named anything you'd like. It just needs to be configured using the `access_token` input below. If it's a secret, that would look something like:
@@ -40,7 +38,7 @@ You can then use a configuration similar to below to use this action:
 Add a step like this to your workflow
 
 ```yaml
-- uses: enygma/update-team-avatars@v1 # You can change this to use a specific version.
+- uses: enygma/update-team-avatars@v1.1 # You can change this to use a specific version.
   with:
     # The repository where you want to update the README.md file.
     # Required, no default
