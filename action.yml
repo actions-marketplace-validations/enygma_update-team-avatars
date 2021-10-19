@@ -30,3 +30,6 @@ runs:
     - ${{ inputs.username }}
     - ${{ inputs.team }}
     - ${{ inputs.target_branch }}
+branding:
+  icon: 'chevrons-up'
+  color: 'green'
