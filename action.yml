@@ -1,0 +1,32 @@
+# action.yml
+name: 'Update Team Avatars'
+description: 'Fetches the members of the specified team and updates the README.md on the target repository with their avatars'
+inputs:
+  target_repository:
+    description: 'Name of target repository'
+    required: true
+  username:
+    description: 'Username to use when fetching the members from the API'
+    required: true
+  team:
+    description: 'Path to the team to fetch the members of'
+    required: true
+  target_branch:
+    description: 'Branch to update the README.md on (defaults to "main")'
+    required: true
+    default: 'main'
+  access_token:
+    description: 'Personal access token with access to update the target_repo'
+    required: true
+  email:
+    description: 'Email address matching the user in username'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.access_token }}
+    - ${{ inputs.target_repository }}
+    - ${{ inputs.username }}
+    - ${{ inputs.team }}
+    - ${{ inputs.target_branch }}
